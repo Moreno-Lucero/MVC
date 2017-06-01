@@ -2,7 +2,7 @@ package MVC;
 import java.util.HashMap;
 
 /**
- * Created by luceromoreno on 5/28/17.
+ * Created by luceromoreno on 5/27/17.
  */
 public class Model {
     private HashMap<String, Integer> personMap = new HashMap<String, Integer>();
