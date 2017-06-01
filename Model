@@ -1,0 +1,30 @@
+package MVC;
+import java.util.HashMap;
+
+/**
+ * Created by luceromoreno on 5/28/17.
+ */
+public class Model {
+    private HashMap<String, Integer> personMap = new HashMap<String, Integer>();
+
+    public Model(){
+
+        personMap.put("Female", 0);
+        personMap.put("Male", 0);
+    }
+
+    public void putInMap(String gender, Integer number){
+
+        personMap.replace(gender, number);
+    }
+
+    public Integer getAmount(String gender){
+
+        Integer genderNumber = personMap.get(gender);
+        return genderNumber;
+    }
+
+    public HashMap getMap(){
+        return personMap;
+    }
+}
