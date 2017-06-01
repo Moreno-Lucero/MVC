@@ -1,0 +1,80 @@
+package MVC;
+import java.util.Scanner;
+
+/**
+ * Created by luceromoreno on 5/27/17.
+ */
+public class View {
+    public static void main(String[] args){
+
+        Controller controller = new Controller();
+        Scanner scanner = new Scanner(System.in);
+
+        for (boolean i = true; i; ) {
+
+            //Displays the main menu of options
+            System.out.println(" \nPick an option \n" +
+                    "1 = See how many people of each gender there are. \n" +
+                    "2 = Add more people. \n" +
+                    "3 = Remove people. \n" +
+                    "4 = Exit");
+
+            Integer input = scanner.nextInt();
+
+            switch (input){
+
+                case (1):
+                    //dispalays map in Model
+                    System.out.println(controller.getPeopleMap());
+                    break;
+
+                case (2):
+                    //ask some question to proceed
+                    System.out.println(" \nDo you want to add a female or male? \n" +
+                            "1 = Female \n" +
+                            "2 = Male \n");
+
+                    Integer input1 = scanner.nextInt();
+                    controller.findPeople(input1);
+
+                    //gets info from what user would like to do
+                    System.out.println(" \nHow many people would you like to add?");
+
+                    Integer input2 = scanner.nextInt();
+
+                    //adds a certain number of either male or female
+                    controller.findGenderToAdd(input2);
+
+                    //displays how many people were added
+                    System.out.println(" \nSuccessfully added " + input2 + ".");
+                    break;
+
+                case (3):
+                    //ask another question to proceed
+                    System.out.println(" \nWhat type of gender would you like to remove? \n" +
+                            "1 = Female \n" +
+                            "2 = Make \n");
+
+                    Integer input3 = scanner.nextInt();
+                    controller.findPeople(input3);
+
+                    //gets info on what the user wants to discard
+                    System.out.println(" \nHow many would you like to remove?");
+
+                    Integer input5 = scanner.nextInt();
+
+                    //removes people
+                    controller.findGenderToRemove(input5);
+
+                    //prints out how many people were removed
+                    System.out.println(" \nSuccessfully removed " + input3 + ".");
+                    break;
+
+                default:
+                    i=false;
+                    break;
+            }
+        }
+    }}
+
+
