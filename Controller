@@ -1,0 +1,43 @@
+package MVC;
+import java.util.HashMap;
+
+/**
+ * Created by luceromoreno on 5/27/17.
+ */
+public class Controller {
+
+        public Model model = new Model();
+        String gender;
+        Integer newPerson;
+
+        public void findPeople(Integer input){
+
+            switch (input) {
+
+                case (1):
+                    gender = "Female";
+                    break;
+                case (2):
+                    gender = "Male";
+                    break;
+
+            }
+        }
+
+        public HashMap getPeopleMap(){
+            return model.getMap();
+        }
+
+        public void findGenderToAdd(Integer input2) {
+
+            newPerson = model.getAmount(gender) + input2;
+            model.putInMap(gender, newPerson);
+        }
+
+        public void findGenderToRemove(Integer input4) {
+
+            newPerson = model.getAmount(gender) - input4;
+            model.putInMap(gender, newPerson);
+        }
+    }
+
